@@ -1,0 +1,49 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>Search court</h1>
+    <p><?php echo $this->tag->linkTo(["court/new", "Create court"]) ?></p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<form action="court/search" class="form-horizontal" method="get">
+    <div class="form-group">
+    <label for="fieldId" class="col-sm-2 control-label">Id</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["id", "type" => "number", "class" => "form-control", "id" => "fieldId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldSurface" class="col-sm-2 control-label">Surface</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["surface", "size" => 30, "class" => "form-control", "id" => "fieldSurface"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldFloodlights" class="col-sm-2 control-label">Floodlights</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["floodlights", "size" => 30, "class" => "form-control", "id" => "fieldFloodlights"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldIndoor" class="col-sm-2 control-label">Indoor</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["indoor", "size" => 30, "class" => "form-control", "id" => "fieldIndoor"]) ?>
+    </div>
+</div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+        </div>
+    </div>
+</form>
